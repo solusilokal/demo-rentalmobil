@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tingang Jaya Trans | Rental Mobil Kalimantan Tengah</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins for modern, friendly look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Konfigurasi Tailwind untuk warna tema Logo TJT -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        borneo: {
+                            green: '#1a4e8a',   // Biru utama dari logo
+                            dark: '#0e2b52',    // Biru gelap
+                            gold: '#f07d22',    // Oranye aksen dari logo
+                            earth: '#d13426',   // Merah dari paruh burung
+                            light: '#f5f7fb'    // Latar belakang terang (sedikit kebiruan)
+                        }
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url('./GambarAsset/Gambar2Jembatankahayan.png')",
+                        'motif-pattern': "url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"none\" fill-rule=\"evenodd\"%3E%3Cg fill=\"%231a4e8a\" fill-opacity=\"0.05\"%3E%3Cpath d=\"M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')", 
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for animations and specific touches */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        .car-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .car-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        /* Motif Dayak accent line - Updated colors */
+        .dayak-border {
+            border-image: linear-gradient(to right, #1a4e8a, #f07d22, #1a4e8a) 1;
+            border-bottom-width: 4px;
+        }
+    </style>
+</head>
+<body class="bg-borneo-light text-gray-800 font-sans antialiased bg-motif-pattern">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-effect shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+               <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="flex items-center gap-2">
+                        <!-- Logo Gambar Anda -->
+                        <img src="./GambarAsset/Logotingangjayatrans.png" alt="Logo Tingang Jaya Trans" class="h-12 w-auto">
+                        
+                        <div class="flex flex-col">
+                            <span class="font-bold text-xl text-borneo-dark leading-tight tracking-wide">TINGANG JAYA</span>
+                            <span class="text-xs text-borneo-gold font-semibold uppercase tracking-widest">Trans</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#beranda" class="text-gray-700 hover:text-borneo-green font-medium transition-colors">Beranda</a>
+                    <a href="#tentang-kami" class="text-gray-700 hover:text-borneo-green font-medium transition-colors">Tentang Kami</a>
+                    <a href="#armada" class="text-gray-700 hover:text-borneo-green font-medium transition-colors">Armada</a>
+                    <a href="#layanan" class="text-gray-700 hover:text-borneo-green font-medium transition-colors">Layanan</a>
+                    <a href="#informasi" class="text-gray-700 hover:text-borneo-green font-medium transition-colors">Informasi & FAQ</a>
+                    <a href="https://wa.me/6281234567890" target="_blank" class="bg-borneo-green hover:bg-borneo-dark text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-md hover:shadow-lg flex items-center gap-2">
+                        <i class="fab fa-whatsapp text-lg"></i> Hubungi Kami
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-borneo-green focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#beranda" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-borneo-green hover:text-white rounded-md transition-colors mobile-link">Beranda</a>
+                <a href="#tentang-kami" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-borneo-green hover:text-white rounded-md transition-colors mobile-link">Tentang Kami</a>
+                <a href="#armada" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-borneo-green hover:text-white rounded-md transition-colors mobile-link">Armada</a>
+                <a href="#layanan" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-borneo-green hover:text-white rounded-md transition-colors mobile-link">Layanan</a>
+                <a href="#informasi" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-borneo-green hover:text-white rounded-md transition-colors mobile-link">Informasi & FAQ</a>
+                <a href="https://wa.me/6281234567890" class="block px-3 py-2 text-base font-medium bg-borneo-green text-white rounded-md text-center mt-4 shadow-md">
+                    <i class="fab fa-whatsapp mr-2"></i> WhatsApp Sekarang
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="relative pt-20 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
+        <!-- Background Overlay -->
+        <div class="absolute inset-0 bg-hero-pattern bg-cover bg-center bg-no-repeat bg-fixed"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-borneo-dark/90 to-borneo-dark/60 mix-blend-multiply"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 flex flex-col items-center text-center lg:text-left lg:items-start">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full mt-10">
+                
+                <!-- Hero Text -->
+                <div class="space-y-6">
+                    <span class="inline-block py-1 px-3 rounded-full bg-borneo-gold/20 text-borneo-gold font-semibold text-sm border border-borneo-gold/30 backdrop-blur-sm">
+                        <i class="fas fa-star mr-1"></i> Pilihan Utama di Kalimantan Tengah
+                    </span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                        Jelajahi Bumi Tambun Bungai dengan <span class="text-borneo-gold">Nyaman & Aman</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-200 font-light max-w-2xl">
+                        Solusi rental mobil terbaik untuk Keluarga, Wisatawan, Umum, dan Instansi. Armada terawat, siap menemani perjalanan dinas atau liburan Anda.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center lg:justify-start pt-4">
+                        <a href="#armada" class="bg-borneo-gold hover:bg-orange-500 text-white font-bold px-8 py-3.5 rounded-lg shadow-lg transition-transform hover:-translate-y-1">
+                            Pilih Armada
+                        </a>
+                        <a href="#kenapa-kami" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/30 font-semibold px-8 py-3.5 rounded-lg transition-all hover:-translate-y-1">
+                            Pelajari Lebih Lanjut
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Booking/Filter Engine -->
+                <div class="w-full max-w-md mx-auto lg:mx-0 lg:ml-auto">
+                    <div class="bg-white rounded-2xl shadow-2xl p-6 lg:p-8 dayak-border relative overflow-hidden">
+                        <!-- Decorative element -->
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-borneo-gold/10 rounded-bl-full -z-10"></div>
+                        
+                        <h3 class="text-2xl font-bold text-borneo-dark mb-6 flex items-center gap-2">
+                            <i class="fas fa-search text-borneo-gold"></i> Cari Mobil Anda
+                        </h3>
+                        
+                        <form id="search-form" class="space-y-4">
+                            <!-- Tipe Layanan -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Tipe Layanan</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <i class="fas fa-car-side text-gray-400"></i>
+                                    </div>
+                                    <select id="filter-layanan" class="pl-10 w-full bg-gray-50 border border-gray-200 text-gray-900 rounded-lg focus:ring-borneo-green focus:border-borneo-green block p-2.5 outline-none transition-colors">
+                                        <option value="semua">Semua Layanan</option>
+                                        <option value="dengan_supir">Mobil + Supir (All In)</option>
+                                        <option value="lepas_kunci">Lepas Kunci</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Kelas Mobil -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Kelas Mobil</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <i class="fas fa-layer-group text-gray-400"></i>
+                                    </div>
+                                    <select id="filter-kelas" class="pl-10 w-full bg-gray-50 border border-gray-200 text-gray-900 rounded-lg focus:ring-borneo-green focus:border-borneo-green block p-2.5 outline-none transition-colors">
+                                        <option value="semua">Semua Kelas</option>
+                                        <option value="city_car">City Car (Brio)</option>
+                                        <option value="mpv">MPV (Avanza, Innova)</option>
+                                        <option value="suv">SUV (Fortuner, Pajero)</option>
+                                        <option value="premium">Premium (Alphard)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Durasi Sewa (Informasional di form ini) -->
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Rencana Durasi</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <i class="fas fa-clock text-gray-400"></i>
+                                    </div>
+                                    <select class="pl-10 w-full bg-gray-50 border border-gray-200 text-gray-900 rounded-lg focus:ring-borneo-green focus:border-borneo-green block p-2.5 outline-none transition-colors">
+                                        <option>Per 12 Jam</option>
+                                        <option>Harian (24 Jam)</option>
+                                        <option>Mingguan</option>
+                                        <option>Bulanan</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button type="button" onclick="document.getElementById('armada').scrollIntoView({behavior: 'smooth'})" class="w-full text-white bg-borneo-green hover:bg-borneo-dark focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-lg px-5 py-3 text-center transition-all mt-4 shadow-md">
+                                Tampilkan Ketersediaan
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Wave shape divider -->
+        <div class="absolute bottom-0 w-full overflow-hidden leading-none rotate-180 z-10">
+            <svg class="relative block w-full h-12 lg:h-20" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#f5f7fb"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Tentang Kami & Kenapa Kami -->
+    <section id="tentang-kami" class="py-20 bg-borneo-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                
+                <!-- About Image/Visual -->
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl group">
+                    <img src="./GambarAsset/Gambar3aTingangjayatrans.png" alt="Kantor Tingang Jaya Trans" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-borneo-dark/80 to-transparent flex items-end p-8">
+                        <div class="text-white">
+                            <h4 class="font-bold text-2xl mb-2">Tingang Jaya Trans</h4>
+                            <p class="font-light">Melayani dengan Hati, Menjelajah Tanpa Batas.</p>
+                        </div>
+                    </div>
+                    <!-- Badge -->
+                    <div class="absolute top-6 right-6 bg-borneo-gold text-white font-bold p-3 rounded-full shadow-lg shadow-black/20 animate-bounce">
+                        <i class="fas fa-check-circle text-2xl"></i>
+                    </div>
+                </div>
+
+                <!-- About Text -->
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-borneo-green/10 text-borneo-green font-semibold text-sm mb-4">
+                        <i class="fas fa-info-circle"></i> Tentang Kami
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                        Mitra Perjalanan Terpercaya di <span class="text-borneo-green">Kalimantan Tengah</span>
+                    </h2>
+                    <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                        <strong class="text-gray-800">Tingang Jaya Trans</strong> adalah penyedia jasa rental mobil profesional yang berbasis di Kalimantan Tengah. Kami hadir untuk memenuhi kebutuhan transportasi Anda, baik untuk liburan keluarga, kunjungan wisata, keperluan instansi, maupun operasional perusahaan.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Mengambil filosofi Burung Tingang (Enggang) yang melambangkan keagungan, kepemimpinan, dan kesetiaan, kami berkomitmen memberikan pelayanan prima, aman, dan mengutamakan kepuasan pelanggan di setiap kilometer perjalanan Anda.
+                    </p>
+                    
+                    <!-- Target Pasar -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                        <h4 class="font-semibold text-gray-900 mb-4 border-b pb-2">Layanan Kami Ideal Untuk:</h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center"><i class="fas fa-users"></i></div>
+                                <span class="font-medium text-gray-700">Keluarga</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center"><i class="fas fa-camera"></i></div>
+                                <span class="font-medium text-gray-700">Wisatawan</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center"><i class="fas fa-building"></i></div>
+                                <span class="font-medium text-gray-700">Instansi</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center"><i class="fas fa-user-tie"></i></div>
+                                <span class="font-medium text-gray-700">Umum / Bisnis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visi & Misi Section -->
+    <section id="visi-misi" class="py-20 bg-white relative overflow-hidden">
+        <!-- SVG Decorative Pattern (Subtle) -->
+        <div class="absolute inset-0 bg-motif-pattern opacity-5 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-borneo-gold/10 text-borneo-gold font-semibold text-sm mb-4 border border-borneo-gold/20">
+                    <i class="fas fa-bullseye"></i> Visi & Misi Kami
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Arah & Komitmen Pelayanan TJT</h2>
+                <div class="h-1 w-20 bg-borneo-green mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+                <!-- Visi Card (Left Column) -->
+                <div class="lg:col-span-5 flex flex-col justify-between p-8 rounded-3xl bg-gradient-to-br from-borneo-green to-borneo-dark text-white shadow-xl relative overflow-hidden">
+                    <!-- Background accent decorative bird silhouette effect placeholder or abstract -->
+                    <div class="absolute -right-8 -bottom-8 opacity-10 text-white pointer-events-none">
+                        <i class="fas fa-dove text-[160px]"></i>
+                    </div>
+                    
+                    <div class="relative z-10 space-y-6">
+                        <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-xl text-borneo-gold border border-white/20">
+                            <i class="fas fa-eye text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold uppercase tracking-wider text-borneo-gold">Visi Kami</h3>
+                        <p class="text-lg leading-relaxed font-light">
+                            "Menjadi mitra perjalanan terpercaya dan penyedia jasa transportasi terdepan di Kalimantan Tengah yang menghadirkan pengalaman menjelajah tanpa batas dengan selalu mengedepankan kualitas dan kepuasan pelanggan."
+                        </p>
+                    </div>
+
+                    <div class="relative z-10 mt-12 border-t border-white/10 pt-6 flex items-center gap-3">
+                        <img src="./GambarAsset/Logotingangjayatrans.png" alt="Logo" class="h-10 w-auto bg-white/95 p-1 rounded-full">
+                        <div>
+                            <p class="text-xs uppercase tracking-widest text-borneo-gold font-bold">Tingang Jaya Trans</p>
+                            <p class="text-[10px] text-gray-300 font-light">Melayani dengan Hati, Menjelajah Tanpa Batas</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Misi List (Right Column) -->
+                <div class="lg:col-span-7 flex flex-col justify-center space-y-6">
+                    <h3 class="text-2xl font-bold text-borneo-dark flex items-center gap-2 mb-2">
+                        <i class="fas fa-rocket text-borneo-gold"></i> Misi Kami
+                    </h3>
+
+                    <!-- Misi Item 1 -->
+                    <div class="flex gap-4 p-5 rounded-2xl bg-borneo-light border border-gray-100 hover:border-borneo-green/20 transition-all shadow-sm">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-borneo-green/10 text-borneo-green flex items-center justify-center text-xl">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-1 text-base">Pelayanan Prima dan Aman</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                Menyediakan layanan rental mobil yang profesional, mengutamakan standar keselamatan tinggi, dan memastikan kenyamanan pelanggan di setiap kilometer perjalanan.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Misi Item 2 -->
+                    <div class="flex gap-4 p-5 rounded-2xl bg-borneo-light border border-gray-100 hover:border-borneo-green/20 transition-all shadow-sm">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-borneo-gold/10 text-borneo-gold flex items-center justify-center text-xl">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-1 text-base">Menjadi Solusi Transportasi Menyeluruh</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                Memenuhi berbagai macam kebutuhan mobilitas pelanggan dengan armada yang andal, baik untuk liburan keluarga, kunjungan wisata, keperluan instansi, maupun operasional perusahaan.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Misi Item 3 -->
+                    <div class="flex gap-4 p-5 rounded-2xl bg-borneo-light border border-gray-100 hover:border-borneo-green/20 transition-all shadow-sm">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-borneo-earth/10 text-borneo-earth flex items-center justify-center text-xl">
+                            <i class="fas fa-dove"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-1 text-base">Menginternalisasi Filosofi Burung Tingang</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                Menjalankan operasional perusahaan dengan menjunjung tinggi nilai-nilai keagungan, kepemimpinan, dan kesetiaan untuk membangun kepercayaan jangka panjang dengan setiap mitra dan pelanggan.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Misi Item 4 -->
+                    <div class="flex gap-4 p-5 rounded-2xl bg-borneo-light border border-gray-100 hover:border-borneo-green/20 transition-all shadow-sm">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-borneo-green/10 text-borneo-green flex items-center justify-center text-xl">
+                            <i class="fas fa-heart text-red-500 animate-pulse"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-1 text-base">Melayani dengan Hati</h4>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                Menghadirkan keramahan dan ketulusan dalam setiap interaksi layanan, guna menciptakan pengalaman perjalanan yang berkesan dan tak terlupakan.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kenapa Kami -->
+    <section id="kenapa-kami" class="py-16 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Kenapa Memilih <span class="text-borneo-green">Tingang Jaya Trans?</span></h2>
+                <div class="h-1 w-20 bg-borneo-gold mx-auto rounded-full mb-4"></div>
+                <p class="text-gray-600">Kami memberikan lebih dari sekadar kendaraan, kami memberikan pengalaman perjalanan yang tenang dan menyenangkan.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <!-- Reason 1 -->
+                <div class="text-center p-6 rounded-2xl hover:bg-gray-50 transition-colors group">
+                    <div class="w-16 h-16 mx-auto bg-borneo-green/10 text-borneo-green rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform group-hover:bg-borneo-green group-hover:text-white">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">Harga Terjangkau</h3>
+                    <p class="text-sm text-gray-500">Tarif kompetitif & transparan tanpa biaya tersembunyi.</p>
+                </div>
+                <!-- Reason 2 -->
+                <div class="text-center p-6 rounded-2xl hover:bg-gray-50 transition-colors group">
+                    <div class="w-16 h-16 mx-auto bg-borneo-green/10 text-borneo-green rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform group-hover:bg-borneo-green group-hover:text-white">
+                        <i class="fas fa-hand-sparkles"></i>
+                        <i class="fas fa-star absolute -top-1 -right-1 text-borneo-gold text-sm animate-pulse"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">Armada Rapi & Terawat</h3>
+                    <p class="text-sm text-gray-500">Mobil bersih, wangi, dan rutin servis berkala.</p>
+                </div>
+                <!-- Reason 3 -->
+                <div class="text-center p-6 rounded-2xl hover:bg-gray-50 transition-colors group">
+                    <div class="w-16 h-16 mx-auto bg-borneo-green/10 text-borneo-green rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform group-hover:bg-borneo-green group-hover:text-white">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">Booking Simple</h3>
+                    <p class="text-sm text-gray-500">Pemesanan mudah dan cepat via WhatsApp.</p>
+                </div>
+                <!-- Reason 4 -->
+                <div class="text-center p-6 rounded-2xl hover:bg-gray-50 transition-colors group">
+                    <div class="w-16 h-16 mx-auto bg-borneo-green/10 text-borneo-green rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform group-hover:bg-borneo-green group-hover:text-white">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">Driver Professional</h3>
+                    <p class="text-sm text-gray-500">Sopan, hafal medan Kalimantan, dan bersertifikat.</p>
+                </div>
+                <!-- Reason 5 -->
+                <div class="text-center p-6 rounded-2xl hover:bg-gray-50 transition-colors group">
+                    <div class="w-16 h-16 mx-auto bg-borneo-green/10 text-borneo-green rounded-2xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform group-hover:bg-borneo-green group-hover:text-white">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">Fast Respon 24 Jam</h3>
+                    <p class="text-sm text-gray-500">Layanan pelanggan siap sedia kapanpun Anda butuhkan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Katalog Armada -->
+    <section id="armada" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div class="max-w-2xl">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-borneo-green/10 text-borneo-green font-semibold text-sm mb-4">
+                        <i class="fas fa-car"></i> Katalog Armada
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Pilih Mobil Sesuai Kebutuhan Anda</h2>
+                    <p class="text-gray-600">Semua armada kami dalam kondisi prima dan siap jalan. Harga tertera adalah tarif dasar per 12 Jam.</p>
+                </div>
+                
+                <!-- Filter Buttons (JavaScript will handle logic) -->
+                <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="portfolio-filters">
+                    <button class="filter-btn active px-4 py-2 rounded-full bg-borneo-green text-white text-sm font-medium transition-colors" data-filter="all">Semua</button>
+                    <button class="filter-btn px-4 py-2 rounded-full bg-white border border-gray-200 text-gray-600 hover:bg-gray-100 text-sm font-medium transition-colors" data-filter="mpv">MPV</button>
+                    <button class="filter-btn px-4 py-2 rounded-full bg-white border border-gray-200 text-gray-600 hover:bg-gray-100 text-sm font-medium transition-colors" data-filter="suv">SUV</button>
+                    <button class="filter-btn px-4 py-2 rounded-full bg-white border border-gray-200 text-gray-600 hover:bg-gray-100 text-sm font-medium transition-colors" data-filter="premium">Premium</button>
+                </div>
+            </div>
+
+            <!-- Grid Mobil -->
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8" id="car-grid">
+                
+                <!-- Mobil 1: Brio -->
+                <div class="car-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full" data-category="city_car">
+                    <div class="relative aspect-video bg-gray-200 overflow-hidden">
+                        <img src="./GambarAsset/Mobil1.png"  alt="Honda Brio" class="w-full h-full object-cover relative z-0">
+                        <!-- Overlay Gradient Biru Transparan -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-borneo-dark/80 via-borneo-green/30 to-transparent pointer-events-none z-0"></div>
+                        
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-borneo-dark shadow z-10">City Car</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Honda Brio Satya</h3>
+                        <p class="text-sm text-gray-500 mb-4">Tahun 2020</p>
+                        
+                        <div class="grid grid-cols-2 gap-y-3 mb-4">
+                            <div class="flex items-center text-sm text-gray-600"><i class="fas fa-users w-5 text-borneo-green text-center"></i> 4 Seat</div>
+                            <div class="flex items-center text-sm text-gray-600"><i class="fas fa-cogs w-5 text-borneo-green text-center"></i> Matic/Manual</div>
+                        </div>
+                        
+                        <div class="mt-auto border-t pt-4">
+                            <div class="mb-3">
+                                <label class="text-xs font-semibold text-gray-500 mb-1 block">Pilih Durasi Sewa:</label>
+                                <select class="duration-select w-full bg-gray-50 border border-gray-200 text-gray-700 text-sm rounded-lg focus:ring-borneo-green focus:border-borneo-green p-2 outline-none" data-car-id="brio">
+                                    <option value="12j">12 Jam</option>
+                                    <option value="24j">24 Jam (Harian)</option>
+                                    <option value="mingguan">Mingguan</option>
+                                    <option value="bulanan">Bulanan</option>
+                                </select>
+                            </div>
+
+                            <div class="space-y-2 mb-4">
+                                <div class="flex justify-between items-center p-2.5 rounded-lg bg-gray-50 border border-gray-200">
+                                    <div>
+                                        <span class="text-xs font-semibold text-gray-700 block">Lepas Kunci</span>
+                                        <span class="text-[10px] text-gray-500">Tanpa Supir & BBM</span>
+                                    </div>
+                                    <span class="text-sm font-bold text-gray-900 price-display" data-car="brio" data-type="lepas" data-12j="250.000" data-24j="300.000" data-mingguan="1.800.000" data-bulanan="5.500.000">Rp 250.000</span>
+                                </div>
+                                <div class="flex justify-between items-center p-2.5 rounded-lg bg-borneo-green/10 border border-borneo-green/30 relative overflow-hidden">
+                                    <div class="absolute top-0 left-0 w-1 h-full bg-borneo-green"></div>
+                                    <div class="pl-2">
+                                        <span class="text-xs font-semibold text-borneo-dark block">Include Driver</span>
+                                        <span class="text-[10px] text-borneo-green font-medium">+ BBM (All-In)</span>
+                                    </div>
+                                    <span class="text-sm font-bold text-borneo-green price-display" data-car="brio" data-type="allin" data-12j="320.000" data-24j="450.000" data-mingguan="2.800.000" data-bulanan="Hubungi Admin">Rp 320.000</span>
+                                </div>
+                            </div>
+                            <a href="https://wa.me/6281234567890?text=Halo%20Tingang%20Jaya%20Trans,%20saya%20ingin%20pesan%20Honda%20Brio" target="_blank" class="block text-center w-full bg-borneo-dark hover:bg-black text-white px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors shadow-md">
+                                <i class="fab fa-whatsapp mr-1"></i> Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobil 2: Avanza Lama -->
+                <div class="car-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full" data-category="mpv">
+                    <div class="relative aspect-video bg-gray-200 overflow-hidden">
+                        <img src="./GambarAsset/Mobil2.png" alt="Toyota Avanza" class="w-full h-full object-cover relative z-0">
+                        <!-- Overlay Gradient Biru Transparan -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-borneo-dark/80 via-borneo-green/30 to-transparent pointer-events-none z-0"></div>
+                        
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-borneo-dark shadow z-10">MPV</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Toyota New Avanza G</h3>
+                        <p class="text-sm text-gray-500 mb-4">Tahun 2018</p>
+                        
+                        <div class="grid grid-cols-2 gap-y-3 mb-4">
+                            <div class="flex items-center text-sm text-gray-600"><i class="fas fa-users w-5 text-borneo-green text-center"></i> 6 Seat</div>
+                            <div class="flex items-center text-sm text-gray-600"><i class="fas fa-cogs w-5 text-borneo-green text-center"></i> Manual</div>
+                        </div>
+                        
+                        <div class="mt-auto border-t pt-4">
+                             <div class="mb-3">
+                                <label class="text-xs font-semibold text-gray-500 mb-1 block">Pilih Durasi Sewa:</label>
+                                <select class="duration-select w-full bg-gray-50 border border-gray-200 text-gray-700 text-sm rounded-lg focus:ring-borneo-green focus:border-borneo-green p-2 outline-none" data-car-id="avanza18">
+                                    <option value="12j">12 Jam</option>
+                                    <option value="24j">24 Jam (Harian)</option>
+                                    <option value="mingguan">Mingguan</option>
+                                    <option value="bulanan">Bulanan</option>
+                                </select>
+                            </div>
+
+                            <div class="space-y-2 mb-4">
+                                <div class="flex justify-between items-center p-2.5 rounded-lg bg-gray-50 border border-gray-200">
+                                    <div>
+                                        <span class="text-xs font-semibold text-gray-700 block">Lepas Kunci</span>
+                                        <span class="text-[10px] text-gray-500">Tanpa Supir & BBM</span>
+                                    </div>
+                                    <span class="text-sm font-bold text-gray-900 price-display" data-car="avanza18" data-type="lepas" data-12j="300.000" data-24j="350.000" data-mingguan="2.100.000" data-bulanan="6.000.000">Rp 300.000</span>
+                                </div>
+                                <div class="flex justify-between items-center p-2.5 rounded-lg bg-borneo-green/10 border border-borneo-green/30 relative overflow-hidden">
+                                    <div class="absolute top-0 left-0 w-1 h-full bg-borneo-green"></div>
+                                    <div class="pl-2">
+                                        <span class="text-xs font-semibold text-borneo-dark block">Include Driver</span>
+                                        <span class="text-[10px] text-borneo-green font-medium">+ BBM (All-In)</span>
+                                    </div>
+                                    <span class="text-sm font-bold text-borneo-green price-display" data-car="avanza18" data-type="allin" data-12j="550.000" data-24j="650.000" data-mingguan="4.000.000" data-bulanan="Hubungi Admin">Rp 550.000</span>
+                                </div>
+                            </div>
+                            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20pesan%20Avanza%202018" target="_blank" class="block text-center w-full bg-borneo-dark hover:bg-black text-white px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors shadow-md">
+                                <i class="fab fa-whatsapp mr-1"></i> Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobil 3: Grand New Avanza -->
+                <div class="car-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full" data-category="mpv">
+                    <div class="relative aspect-video bg-gray-200 overflow-hidden">
+                        <img src="./GambarAsset/Mobil3.png" alt="Toyota Grand New Avanza" class="w-full h-full object-cover relative z-0">
+                        <!-- Overlay Gradient Biru Transparan -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-borneo-dark/80 via-borneo-green/30 to-transparent pointer-events-none z-0"></div>
+                        
+                        <!-- Badge Popular -->
+                        <div class="absolute top-0 left-0 bg-borneo-gold text-white text-xs font-bold px-3 py-1 rounded-br-lg z-10"><i class="fas fa-fire mr-1"></i> Populer</div>
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-borneo-dark shadow z-10">MPV</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Toyota Grand New Avanza G</h3>
+                        <p class="text-sm text-gray-500 mb-4">Tahun 2022</p>
+                        
+                        <div class="grid grid-cols-2 gap-y-3 mb-4">
+                            <div class="flex items-center text-sm text-gray-600"><i class="fas fa-users w-5 text-borneo-green text-center"></i> 6 Seat</div>
+                            <div class="flex items-center text-sm text-gray-600"><i class="fas fa-cogs w-5 text-borneo-green text-center"></i> Matic</div>
+                        </div>
+                        
+                        <div class="mt-auto border-t pt-4">
+                             <div class="mb-3">
+                                <label class="text-xs font-semibold text-gray-500 mb-1 block">Pilih Durasi Sewa:</label>
+                                <select class="duration-select w-full bg-gray-50 border border-gray-200 text-gray-700 text-sm rounded-lg focus:ring-borneo-green focus:border-borneo-green p-2 outline-none" data-car-id="avanza22">
+                                    <option value="12j">12 Jam</option>
+                                    <option value="24j">24 Jam (Harian)</option>
+                                    <option value="mingguan">Mingguan</option>
+                                    <option value="bulanan">Bulanan</option>
+                                </select>
+                            </div>
+
+                            <div class="space-y-2 mb-4">
+                                <div class="flex justify-between items-center p-2.5 rounded-lg bg-gray-50 border border-gray-200">
+                                    <div>
+                                        <span class="text-xs font-semibold text-gray-700 block">Lepas Kunci</span>
+                                        <span class="text-[10px] text-gray-500">Tanpa Supir & BBM</span>
+                                    </div>
+                                    <span class="text-sm font-bold text-gray-900 price-display" data-car="avanza22" data-type="lepas" data-12j="350.000" data-24j="400.000" data-mingguan="2.400.000" data-bulanan="6.500.000">Rp 350.000</span>
+                                </div>
+                                <div class="flex justify-between items-center p-2.5 rounded-lg bg-borneo-green/10 border border-borneo-green/30 relative overflow-hidden">
+                                    <div class="absolute top-0 left-0 w-1 h-full bg-borneo-green"></div>
+                                    <div class="pl-2">
+                                        <span class="text-xs font-semibold text-borneo-dark block">Include Driver</span>
+                                        <span class="text-[10px] text-borneo-green font-medium">+ BBM (All-In)</span>
+                                    </div>
+                                    <span class="text-sm font-bold text-borneo-green price-display" data-car="avanza22" data-type="allin" data-12j="700.000" data-24j="800.000" data-mingguan="4.500.000" data-bulanan="Hubungi Admin">Rp 700.000</span>
+                                </div>
+                            </div>
+                            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20pesan%20Toyota%20Grand%20New%20Avanza" target="_blank" class="block text-center w-full bg-borneo-dark hover:bg-black text-white px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors shadow-md">
+                                <i class="fab fa-whatsapp mr-1"></i> Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobil 4: Innova Reborn -->
+                <div class="car-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full" data-category="mpv">
+                    <div class="relative aspect-video bg-gray-200 overflow-hidden">
+                        <img src="./GambarAsset/Mobil4.png" alt="Innova Reborn" class="w-full h-full object-cover relative z-0">
+                        <!-- Overlay Gradient Biru Transparan -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-borneo-dark/80 via-borneo-green/30 to-transparent pointer-events-none z-0"></div>
+                        
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-borneo-dark shadow z-10">Premium MPV</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Toyota Innova Reborn</h3>
+                        <p class="text-sm text-gray-500 mb-4">Tahun 2020</p>
+                        
+                        <div class="grid grid-cols-2 gap-y-3 mb-4">
+                            <div class="flex items-center text-sm text-gray-600"><i class="fas fa-users w-5 text-borneo-green text-center"></i> 7 Seat</div>
+                            <div class="flex items-center text-sm text-gray-600"><i class="fas fa-cogs w-5 text-borneo-green text-center"></i> Matic / Manual</div>
+                        </div>
+                        
+                        <div class="mt-auto border-t pt-4">
+                            <div class="mb-3">
+                                <label class="text-xs font-semibold text-gray-500 mb-1 block">Pilih Durasi Sewa:</label>
+                                <select class="duration-select w-full bg-gray-50 border border-gray-200 text-gray-700 text-sm rounded-lg focus:ring-borneo-green focus:border-borneo-green p-2 outline-none" data-car-id="innova20">
+                                    <option value="12j">12 Jam</option>
+                                    <option value="24j">24 Jam (Harian)</option>
+                                    <option value="mingguan">Mingguan</option>
+                                    <option value="bulanan">Bulanan</option>
+                                </select>
+                            </div>
+
+                            <div class="space-y-2 mb-4">
+                                <div class="flex justify-between items-center p-2.5 rounded-lg bg-gray-50 border border-gray-200">
+                                    <div>
+                                        <span class="text-xs font-semibold text-gray-700 block">Lepas Kunci</span>
+                                        <span class="text-[10px] text-gray-500">Tanpa Supir & BBM</span>
+                                    </div>
+                                    <span class="text-sm font-bold text-gray-900 price-display" data-car="innova20" data-type="lepas" data-12j="450.000" data-24j="550.000" data-mingguan="3.500.000" data-bulanan="9.000.000">Rp 450.000</span>
+                                </div>
+                                <div class="flex justify-between items-center p-2.5 rounded-lg bg-borneo-green/10 border border-borneo-green/30 relative overflow-hidden">
+                                    <div class="absolute top-0 left-0 w-1 h-full bg-borneo-green"></div>
+                                    <div class="pl-2">
+                                        <span class="text-xs font-semibold text-borneo-dark block">Include Driver</span>
+                                        <span class="text-[10px] text-borneo-green font-medium">+ BBM (All-In)</span>
+                                    </div>
+                                    <span class="text-sm font-bold text-borneo-green price-display" data-car="innova20" data-type="allin" data-12j="900.000" data-24j="1.100.000" data-mingguan="6.000.000" data-bulanan="Hubungi Admin">Rp 900.000</span>
+                                </div>
+                            </div>
+                            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20pesan%20Innova%20Reborn" target="_blank" class="block text-center w-full bg-borneo-dark hover:bg-black text-white px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors shadow-md">
+                                <i class="fab fa-whatsapp mr-1"></i> Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobil 5: Innova Zenix -->
+                <div class="car-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full" data-category="mpv">
+                    <div class="relative aspect-video bg-gray-200 overflow-hidden">
+                        <img src="./GambarAsset/Mobil5.png" alt="Innova Zenix" class="w-full h-full object-cover relative z-0">
+                        <!-- Overlay Gradient Biru Transparan -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-borneo-dark/80 via-borneo-green/30 to-transparent pointer-events-none z-0"></div>
+                        
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-borneo-dark shadow z-10">Premium MPV</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Toyota Innova Zenix</h3>
+                        <p class="text-sm text-gray-500 mb-4">Tahun 2022</p>
+                        
+                        <div class="grid grid-cols-2 gap-y-3 mb-4">
+                            <div class="flex items-center text-sm text-gray-600"><i class="fas fa-users w-5 text-borneo-green text-center"></i> 7 Seat</div>
+                            <div class="flex items-center text-sm text-gray-600"><i class="fas fa-cogs w-5 text-borneo-green text-center"></i> Matic</div>
+                        </div>
+                        
+                        <div class="mt-auto border-t pt-4">
+                            <div class="mb-3">
+                                <label class="text-xs font-semibold text-gray-500 mb-1 block">Pilih Durasi Sewa:</label>
+                                <select class="duration-select w-full bg-gray-50 border border-gray-200 text-gray-700 text-sm rounded-lg focus:ring-borneo-green focus:border-borneo-green p-2 outline-none" data-car-id="zenix">
+                                    <option value="12j">12 Jam</option>
+                                    <option value="24j">24 Jam (Harian)</option>
+                                    <option value="mingguan">Mingguan</option>
+                                    <option value="bulanan">Bulanan</option>
+                                </select>
+                            </div>
+
+                            <div class="space-y-2 mb-4">
+                                <div class="flex justify-between items-center p-2.5 rounded-lg bg-gray-50 border border-gray-200">
+                                    <div>
+                                        <span class="text-xs font-semibold text-gray-700 block">Lepas Kunci</span>
+                                        <span class="text-[10px] text-gray-500">Tanpa Supir & BBM</span>
+                                    </div>
+                                    <span class="text-sm font-bold text-gray-900 price-display" data-car="zenix" data-type="lepas" data-12j="600.000" data-24j="800.000" data-mingguan="4.500.000" data-bulanan="12.000.000">Rp 600.000</span>
+                                </div>
+                                <div class="flex justify-between items-center p-2.5 rounded-lg bg-borneo-green/10 border border-borneo-green/30 relative overflow-hidden">
+                                    <div class="absolute top-0 left-0 w-1 h-full bg-borneo-green"></div>
+                                    <div class="pl-2">
+                                        <span class="text-xs font-semibold text-borneo-dark block">Include Driver</span>
+                                        <span class="text-[10px] text-borneo-green font-medium">+ BBM (All-In)</span>
+                                    </div>
+                                    <span class="text-sm font-bold text-borneo-green price-display" data-car="zenix" data-type="allin" data-12j="1.200.000" data-24j="1.400.000" data-mingguan="8.000.000" data-bulanan="Hubungi Admin">Rp 1.200.000</span>
+                                </div>
+                            </div>
+                            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20pesan%20Innova%20Zenix" target="_blank" class="block text-center w-full bg-borneo-dark hover:bg-black text-white px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors shadow-md">
+                                <i class="fab fa-whatsapp mr-1"></i> Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobil 6: Fortuner -->
+                <div class="car-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full" data-category="suv">
+                    <div class="relative aspect-video bg-gray-200 overflow-hidden">
+                        <img src="./GambarAsset/Mobil6.png" alt="Fortuner" class="w-full h-full object-cover relative z-0">
+                        <!-- Overlay Gradient Biru Transparan -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-borneo-dark/80 via-borneo-green/30 to-transparent pointer-events-none z-0"></div>
+                        
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-borneo-dark shadow z-10">SUV</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Toyota New Fortuner TRD</h3>
+                        <p class="text-sm text-gray-500 mb-4">Tahun 2022</p>
+                        
+                        <div class="grid grid-cols-2 gap-y-3 mb-4">
+                            <div class="flex items-center text-sm text-gray-600"><i class="fas fa-users w-5 text-borneo-green text-center"></i> 5 Seat</div>
+                            <div class="flex items-center text-sm text-gray-600"><i class="fas fa-cogs w-5 text-borneo-green text-center"></i> Matic</div>
+                        </div>
+                        
+                        <div class="mt-auto border-t pt-4">
+                            <div class="mb-3">
+                                <label class="text-xs font-semibold text-gray-500 mb-1 block">Pilih Durasi Sewa:</label>
+                                <select class="duration-select w-full bg-gray-50 border border-gray-200 text-gray-700 text-sm rounded-lg focus:ring-borneo-green focus:border-borneo-green p-2 outline-none" data-car-id="fortuner">
+                                    <option value="12j">12 Jam</option>
+                                    <option value="24j">24 Jam (Harian)</option>
+                                    <option value="mingguan">Mingguan</option>
+                                    <option value="bulanan">Bulanan</option>
+                                </select>
+                            </div>
+
+                            <div class="space-y-2 mb-4">
+                                <div class="flex justify-between items-center p-2.5 rounded-lg bg-gray-50 border border-gray-200">
+                                    <div>
+                                        <span class="text-xs font-semibold text-gray-700 block">Lepas Kunci</span>
+                                        <span class="text-[10px] text-gray-500">Tanpa Supir & BBM</span>
+                                    </div>
+                                    <span class="text-sm font-bold text-gray-900 price-display" data-car="fortuner" data-type="lepas" data-12j="800.000" data-24j="1.100.000" data-mingguan="6.500.000" data-bulanan="18.000.000">Rp 800.000</span>
+                                </div>
+                                <div class="flex justify-between items-center p-2.5 rounded-lg bg-borneo-green/10 border border-borneo-green/30 relative overflow-hidden">
+                                    <div class="absolute top-0 left-0 w-1 h-full bg-borneo-green"></div>
+                                    <div class="pl-2">
+                                        <span class="text-xs font-semibold text-borneo-dark block">Include Driver</span>
+                                        <span class="text-[10px] text-borneo-green font-medium">+ BBM (All-In)</span>
+                                    </div>
+                                    <span class="text-sm font-bold text-borneo-green price-display" data-car="fortuner" data-type="allin" data-12j="1.500.000" data-24j="1.800.000" data-mingguan="10.000.000" data-bulanan="Hubungi Admin">Rp 1.500.000</span>
+                                </div>
+                            </div>
+                            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20pesan%20Fortuner" target="_blank" class="block text-center w-full bg-borneo-dark hover:bg-black text-white px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors shadow-md">
+                                <i class="fab fa-whatsapp mr-1"></i> Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Mobil 7: Pajero -->
+                <div class="car-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full" data-category="suv">
+                    <div class="relative aspect-video bg-gray-200 overflow-hidden">
+                        <img src="./GambarAsset/Mobil7.png" alt="Pajero Sport" class="w-full h-full object-cover relative z-0">
+                        <!-- Overlay Gradient Biru Transparan -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-borneo-dark/80 via-borneo-green/30 to-transparent pointer-events-none z-0"></div>
+                        
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-borneo-dark shadow z-10">SUV</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Mitsubishi New Pajero Sport</h3>
+                        <p class="text-sm text-gray-500 mb-4">Tahun 2021</p>
+                        
+                        <div class="grid grid-cols-2 gap-y-3 mb-4">
+                            <div class="flex items-center text-sm text-gray-600"><i class="fas fa-users w-5 text-borneo-green text-center"></i> 5 Seat</div>
+                            <div class="flex items-center text-sm text-gray-600"><i class="fas fa-cogs w-5 text-borneo-green text-center"></i> Matic</div>
+                        </div>
+                        
+                        <div class="mt-auto border-t pt-4">
+                            <div class="mb-3">
+                                <label class="text-xs font-semibold text-gray-500 mb-1 block">Pilih Durasi Sewa:</label>
+                                <select class="duration-select w-full bg-gray-50 border border-gray-200 text-gray-700 text-sm rounded-lg focus:ring-borneo-green focus:border-borneo-green p-2 outline-none" data-car-id="pajero">
+                                    <option value="12j">12 Jam</option>
+                                    <option value="24j">24 Jam (Harian)</option>
+                                    <option value="mingguan">Mingguan</option>
+                                    <option value="bulanan">Bulanan</option>
+                                </select>
+                            </div>
+
+                            <div class="space-y-2 mb-4">
+                                <div class="flex justify-between items-center p-2.5 rounded-lg bg-gray-50 border border-gray-200">
+                                    <div>
+                                        <span class="text-xs font-semibold text-gray-700 block">Lepas Kunci</span>
+                                        <span class="text-[10px] text-gray-500">Tanpa Supir & BBM</span>
+                                    </div>
+                                    <span class="text-sm font-bold text-gray-900 price-display" data-car="pajero" data-type="lepas" data-12j="800.000" data-24j="1.100.000" data-mingguan="6.500.000" data-bulanan="18.000.000">Rp 800.000</span>
+                                </div>
+                                <div class="flex justify-between items-center p-2.5 rounded-lg bg-borneo-green/10 border border-borneo-green/30 relative overflow-hidden">
+                                    <div class="absolute top-0 left-0 w-1 h-full bg-borneo-green"></div>
+                                    <div class="pl-2">
+                                        <span class="text-xs font-semibold text-borneo-dark block">Include Driver</span>
+                                        <span class="text-[10px] text-borneo-green font-medium">+ BBM (All-In)</span>
+                                    </div>
+                                    <span class="text-sm font-bold text-borneo-green price-display" data-car="pajero" data-type="allin" data-12j="1.500.000" data-24j="1.800.000" data-mingguan="10.000.000" data-bulanan="Hubungi Admin">Rp 1.500.000</span>
+                                </div>
+                            </div>
+                            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20pesan%20Pajero%20Sport" target="_blank" class="block text-center w-full bg-borneo-dark hover:bg-black text-white px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors shadow-md">
+                                <i class="fab fa-whatsapp mr-1"></i> Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobil 8: Alphard -->
+                <div class="car-card bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col h-full" data-category="premium">
+                    <div class="relative aspect-video bg-gray-200 overflow-hidden">
+                       <img src="./GambarAsset/Mobil8.png" alt="Toyota Alphard" class="w-full h-full object-cover relative z-0">
+                       <!-- Overlay Gradient Biru Transparan -->
+                       <div class="absolute inset-0 bg-gradient-to-t from-borneo-dark/80 via-borneo-green/30 to-transparent pointer-events-none z-0"></div>
+                       
+                        <div class="absolute top-0 right-0 bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg shadow z-10"><i class="fas fa-crown mr-1"></i> Executive</div>
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-borneo-dark shadow z-10">Premium</div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="text-xl font-bold text-gray-900 mb-1">Toyota Alphard Transformer</h3>
+                        <p class="text-sm text-gray-500 mb-4">Tahun 2017</p>
+                        
+                        <div class="grid grid-cols-2 gap-y-3 mb-4">
+                            <div class="flex items-center text-sm text-gray-600"><i class="fas fa-users w-5 text-borneo-green text-center"></i> 5 Seat</div>
+                            <div class="flex items-center text-sm text-gray-600"><i class="fas fa-cogs w-5 text-borneo-green text-center"></i> Matic</div>
+                        </div>
+                        
+                        <div class="mt-auto border-t pt-4">
+                             <div class="mb-3">
+                                <label class="text-xs font-semibold text-gray-500 mb-1 block">Pilih Durasi Sewa:</label>
+                                <select class="duration-select w-full bg-gray-50 border border-gray-200 text-gray-700 text-sm rounded-lg focus:ring-borneo-green focus:border-borneo-green p-2 outline-none" data-car-id="alphard">
+                                    <option value="12j">12 Jam</option>
+                                    <option value="24j">24 Jam (Harian)</option>
+                                    <option value="mingguan">Mingguan</option>
+                                    <option value="bulanan">Bulanan</option>
+                                </select>
+                            </div>
+
+                            <div class="space-y-2 mb-4">
+                                <div class="flex justify-between items-center p-2.5 rounded-lg bg-gray-50 border border-gray-200">
+                                    <div>
+                                        <span class="text-xs font-semibold text-gray-700 block">Lepas Kunci</span>
+                                        <span class="text-[10px] text-gray-500">Tanpa Supir & BBM</span>
+                                    </div>
+                                    <span class="text-sm font-bold text-gray-900 price-display" data-car="alphard" data-type="lepas" data-12j="1.200.000" data-24j="1.800.000" data-mingguan="12.000.000" data-bulanan="30.000.000">Rp 1.200.000</span>
+                                </div>
+                                <div class="flex justify-between items-center p-2.5 rounded-lg bg-borneo-green/10 border border-borneo-green/30 relative overflow-hidden">
+                                    <div class="absolute top-0 left-0 w-1 h-full bg-borneo-green"></div>
+                                    <div class="pl-2">
+                                        <span class="text-xs font-semibold text-borneo-dark block">Include Driver</span>
+                                        <span class="text-[10px] text-borneo-green font-medium">+ BBM (All-In)</span>
+                                    </div>
+                                    <span class="text-sm font-bold text-borneo-green price-display" data-car="alphard" data-type="allin" data-12j="2.000.000" data-24j="2.800.000" data-mingguan="15.000.000" data-bulanan="Hubungi Admin">Rp 2.000.000</span>
+                                </div>
+                            </div>
+                            <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20pesan%20Alphard" target="_blank" class="block text-center w-full bg-borneo-dark hover:bg-black text-white px-4 py-2.5 rounded-lg text-sm font-semibold transition-colors shadow-md">
+                                <i class="fab fa-whatsapp mr-1"></i> Pesan Sekarang
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Notice Opsi Sewa -->
+            <div class="mt-12 bg-borneo-green/5 border border-borneo-green/20 rounded-xl p-6 text-center">
+                <p class="text-gray-700 font-medium">
+                    <i class="fas fa-info-circle text-borneo-green mr-2"></i> 
+                    <strong>Sistem Booking Fleksibel:</strong> Kami melayani sewa Per Jam, 12 Jam, Harian (24 Jam), Mingguan, hingga Bulanan (Kontrak Instansi/Perusahaan). Hubungi admin untuk negosiasi harga terbaik.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Informasi & FAQ -->
+    <section id="informasi" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-borneo-green/10 text-borneo-green font-semibold text-sm mb-4">
+                    <i class="fas fa-question-circle"></i> Pusat Informasi
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Pertanyaan yang Sering Diajukan (FAQ)</h2>
+                <p class="text-gray-600">Panduan lengkap mengenai syarat, ketentuan, dan layanan rental mobil Tingang Jaya Trans.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-4">
+                
+                <!-- FAQ Item 1 -->
+                <div class="border border-gray-200 rounded-lg bg-gray-50 overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none bg-white hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-gray-900 text-lg">Apa saja syarat sewa mobil Lepas Kunci?</span>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 py-4 border-t border-gray-200 text-gray-600 bg-white">
+                        <p class="mb-2">Untuk rental mobil lepas kunci (tanpa supir), syarat yang dibutuhkan meliputi:</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>E-KTP asli (Sewa + Penjamin)</li>
+                            <li>SIM A asli yang masih berlaku</li>
+                            <li>Kartu Keluarga (KK) / ID Card Perusahaan</li>
+                            <li>Bersedia di survey (lokasi rumah/kantor) jika diperlukan</li>
+                            <li>Membayar DP (Uang Muka) sebagai tanda jadi.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="border border-gray-200 rounded-lg bg-gray-50 overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none bg-white hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-gray-900 text-lg">Bagaimana Syarat & Ketentuan Rental All In (Dengan Supir)?</span>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 py-4 border-t border-gray-200 text-gray-600 bg-white">
+                        <p>Syarat sewa dengan supir sangat mudah:</p>
+                        <ul class="list-disc pl-5 space-y-1 mt-2">
+                            <li>Cukup lampirkan foto KTP via WhatsApp.</li>
+                            <li>Informasikan titik jemput, tujuan, dan jam keberangkatan.</li>
+                            <li>Harga All In sudah termasuk Jasa Supir dan BBM (Dalam area kota).</li>
+                            <li>Biaya tol, parkir, dan makan supir (jika ke luar kota) ditanggung penyewa, kecuali ada kesepakatan lain.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="border border-gray-200 rounded-lg bg-gray-50 overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none bg-white hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-gray-900 text-lg">Bagaimana sistem pembayaran sewanya?</span>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 py-4 border-t border-gray-200 text-gray-600 bg-white">
+                        <p>Pembayaran dapat dilakukan melalui:</p>
+                        <ul class="list-disc pl-5 space-y-1 mt-2">
+                            <li>Transfer Bank (BCA, Mandiri, BRI, BNI).</li>
+                            <li>E-Wallet (Ovo, Dana, Gopay).</li>
+                            <li>Pembayaran tunai langsung ke driver atau di kantor kami.</li>
+                        </ul>
+                        <p class="mt-2 text-sm italic">*DP minimal 30% diperlukan untuk mengunci jadwal armada.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="border border-gray-200 rounded-lg bg-gray-50 overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none bg-white hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-gray-900 text-lg">Adakah denda untuk keterlambatan pengembalian?</span>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 py-4 border-t border-gray-200 text-gray-600 bg-white">
+                        <p>Ya. Overtime (keterlambatan) akan dikenakan biaya sebesar <strong>10% per jam</strong> dari harga sewa harian. Jika keterlambatan melebihi 6 jam, akan dihitung sebagai sewa 1 hari penuh (24 jam).</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="border border-gray-200 rounded-lg bg-gray-50 overflow-hidden">
+                    <button class="faq-btn w-full px-6 py-4 text-left flex justify-between items-center focus:outline-none bg-white hover:bg-gray-50 transition-colors">
+                        <span class="font-semibold text-gray-900 text-lg">Hal apa saja yang dilarang saat menyewa mobil?</span>
+                        <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 py-4 border-t border-gray-200 text-gray-600 bg-white">
+                        <p>Untuk kenyamanan dan keamanan bersama, penyewa dilarang keras:</p>
+                        <ul class="list-disc pl-5 space-y-1 mt-2">
+                            <li>Membawa barang-barang ilegal (narkoba, senjata tajam, dll).</li>
+                            <li>Menggunakan mobil untuk tindak kejahatan.</li>
+                            <li>Menggadaikan atau memindahtangankan kendaraan ke pihak lain.</li>
+                            <li>Membawa hewan peliharaan (tanpa izin khusus) atau barang berbau menyengat ekstrim.</li>
+                            <li>Membawa muatan melebihi kapasitas standar kendaraan.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="py-20 bg-borneo-dark text-white relative overflow-hidden">
+        <!-- Motif overlay - Updated color to match new dark blue -->
+        <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Apa Kata Mereka Tentang Kami?</h2>
+                <div class="h-1 w-20 bg-borneo-gold mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20">
+                    <div class="flex text-borneo-gold mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-200 mb-6 italic">"Pelayanan sangat memuaskan! Sopirnya ramah dan sangat menguasai jalanan di Palangka Raya dan sekitarnya. Mobil Fortunernya bersih dan wangi."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gray-400 rounded-full overflow-hidden">
+                            <img src="https://ui-avatars.com/api/?name=Budi+Santoso&background=random" alt="User">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Budi Santoso</h4>
+                            <span class="text-xs text-gray-400">Instansi Pemerintah</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20">
+                    <div class="flex text-borneo-gold mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-200 mb-6 italic">"Sewa lepas kunci prosesnya nggak ribet. Adminnya fast respon walaupun saya WA tengah malam. Avanza-nya mantap buat keliling Kalteng bareng keluarga."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gray-400 rounded-full overflow-hidden">
+                            <img src="https://ui-avatars.com/api/?name=Siti+Aminah&background=random" alt="User">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Siti Aminah</h4>
+                            <span class="text-xs text-gray-400">Wisatawan Domestik</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20">
+                    <div class="flex text-borneo-gold mb-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="text-gray-200 mb-6 italic">"Harga sangat terjangkau dibanding rental lain. Kontrak bulanan untuk operasional perusahaan kami sangat dibantu oleh Tingang Jaya Trans."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gray-400 rounded-full overflow-hidden">
+                            <img src="https://ui-avatars.com/api/?name=Hendra+W&background=random" alt="User">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Hendra Wijaya</h4>
+                            <span class="text-xs text-gray-400">Perusahaan Swasta</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lokasi Kami -->
+    <section id="lokasi" class="py-16 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-borneo-green/10 text-borneo-green font-semibold text-sm mb-4">
+                    <i class="fas fa-map-marker-alt"></i> Lokasi Kami
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Kunjungi Kantor Kami</h2>
+                <p class="text-gray-600">Kami siap melayani Anda secara langsung di kantor operasional Tingang Jaya Trans.</p>
+            </div>
+            
+            <div class="rounded-2xl overflow-hidden shadow-xl border border-gray-100 h-[400px]">
+                <iframe 
+                    src="https://maps.google.com/maps?q=Jl.%20Tjilik%20Riwut%20Km.%205,%20Kota%20Palangka%20Raya,%20Kalimantan%20Tengah%2073112&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8 border-t-4 border-borneo-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                
+                <!-- Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2 mb-6">
+                        <!-- Logo Gambar Anda -->
+                        <img src="./GambarAsset/Logotingangjayatrans.png" alt="Logo Tingang Jaya Trans" class="h-12 w-auto">
+                        
+                        <div class="flex flex-col">
+                            <span class="font-bold text-xl text-white leading-tight">TINGANG JAYA</span>
+                            <span class="text-xs text-borneo-gold font-semibold uppercase tracking-widest">Trans</span>
+                        </div>
+                    </div>
+                    <p class="text-sm leading-relaxed text-gray-400">
+                        Solusi rental mobil terpercaya di Kalimantan Tengah. Menyediakan berbagai pilihan armada bersih, terawat, dengan layanan lepas kunci maupun dengan supir profesional.
+                    </p>
+                </div>
+
+                <!-- Kontak -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Kontak Kami</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-borneo-gold mt-1"></i>
+                            <span class="text-sm">Jl. Tjilik Riwut Km. 5, Kota Palangka Raya, Kalimantan Tengah 73112</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fab fa-whatsapp text-borneo-gold"></i>
+                            <span class="text-sm">+62 812-3456-7890</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-borneo-gold"></i>
+                            <span class="text-sm">admin@tingangjayatrans.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Navigasi -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Tautan Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#beranda" class="text-sm hover:text-borneo-gold transition-colors">Beranda</a></li>
+                        <li><a href="#tentang-kami" class="text-sm hover:text-borneo-gold transition-colors">Tentang Kami</a></li>
+                        <li><a href="#armada" class="text-sm hover:text-borneo-gold transition-colors">Katalog Armada</a></li>
+                        <li><a href="#informasi" class="text-sm hover:text-borneo-gold transition-colors">Syarat & Ketentuan</a></li>
+                    </ul>
+                </div>
+
+                <!-- Sosial Media -->
+                <div>
+                    <h4 class="text-white font-bold text-lg mb-6">Ikuti Kami</h4>
+                    <p class="text-sm mb-4">Dapatkan info promo dan update armada terbaru kami.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-borneo-gold hover:text-gray-900 transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-borneo-gold hover:text-gray-900 transition-all">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-borneo-gold hover:text-gray-900 transition-all">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-gray-500 text-center md:text-left">
+                    &copy; 2024 Tingang Jaya Trans. All rights reserved.
+                </p>
+                <p class="text-sm text-gray-500">
+                    Developed by <a href="https://solusilokal.id" target="_blank" class="text-borneo-gold hover:text-white font-semibold transition-colors">SolusiLokal.ID</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6281234567890" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 text-white rounded-full shadow-2xl flex items-center justify-center text-3xl hover:bg-green-600 hover:-translate-y-1 transition-all z-50 animate-bounce" style="animation-duration: 2s;">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Navbar Scroll Effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-white/95', 'shadow-md');
+                    navbar.classList.remove('glass-effect');
+                } else {
+                    navbar.classList.add('glass-effect');
+                    navbar.classList.remove('bg-white/95', 'shadow-md');
+                }
+            });
+
+            // 2. Mobile Menu Toggle
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when a link is clicked
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                });
+            });
+
+            // 3. FAQ Accordion Logic
+            const faqBtns = document.querySelectorAll('.faq-btn');
+            
+            faqBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const content = btn.nextElementSibling;
+                    const icon = btn.querySelector('i');
+                    
+                    // Toggle current
+                    content.classList.toggle('hidden');
+                    if (content.classList.contains('hidden')) {
+                        icon.classList.remove('rotate-180');
+                    } else {
+                        icon.classList.add('rotate-180');
+                    }
+                });
+            });
+
+            // 4. Car Portfolio Filter Logic
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const carCards = document.querySelectorAll('.car-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-borneo-green', 'text-white');
+                        b.classList.add('bg-white', 'text-gray-600');
+                    });
+                    
+                    // Add active class to clicked button
+                    btn.classList.add('bg-borneo-green', 'text-white');
+                    btn.classList.remove('bg-white', 'text-gray-600');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    carCards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'flex'; 
+                            // simple fade in animation
+                            card.style.opacity = '0';
+                            setTimeout(() => {
+                                card.style.transition = 'opacity 0.3s ease';
+                                card.style.opacity = '1';
+                            }, 50);
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // 5. Connect Search Engine to Filter logic (Basic Implementation)
+            const searchFormBtn = document.querySelector('#search-form button');
+            const filterKelasSelect = document.getElementById('filter-kelas');
+
+            searchFormBtn.addEventListener('click', (e) => {
+                // If the user selects a specific class in the hero section, trigger the portfolio filter
+                const selectedClass = filterKelasSelect.value;
+                if(selectedClass !== 'semua') {
+                    // find matching button and click it
+                    const targetBtn = document.querySelector(`.filter-btn[data-filter="${selectedClass}"]`);
+                    if(targetBtn) targetBtn.click();
+                } else {
+                    document.querySelector('.filter-btn[data-filter="all"]').click();
+                }
+            });
+
+            // 6. Dynamic Pricing Selection Logic
+            const durationSelects = document.querySelectorAll('.duration-select');
+            const priceDisplays = document.querySelectorAll('.price-display');
+
+            durationSelects.forEach(select => {
+                select.addEventListener('change', (e) => {
+                    const carId = e.target.getAttribute('data-car-id');
+                    const selectedDuration = e.target.value; 
+
+                    // Find price displays for this specific car
+                    const carPrices = Array.from(priceDisplays).filter(display => display.getAttribute('data-car') === carId);
+
+                    carPrices.forEach(display => {
+                        // Get the price based on the selected duration from data attributes
+                        let newPrice = display.getAttribute(`data-${selectedDuration}`);
+                        
+                        // Formatting logic
+                        if (newPrice !== "Hubungi Admin") {
+                            newPrice = `Rp ${newPrice}`;
+                        }
+                        
+                        // Update text with simple fade effect
+                        display.style.opacity = '0';
+                        setTimeout(() => {
+                            display.textContent = newPrice;
+                            display.style.transition = 'opacity 0.2s ease-in';
+                            display.style.opacity = '1';
+                        }, 150);
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
